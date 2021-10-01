@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<title>FITNESS TIME</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-gray">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+  }
+  
+  .topnav {
+    position: relative;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color:   #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .topnav-centered a {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .topnav-right {
+    float: right;
+  }
+  
+  /* Responsive navigation menu (for mobile devices) */
+  @media screen and (max-width: 600px) {
+    .topnav a, .topnav-right {
+      float: none;
+      display: block;
+    }
+    
+    .topnav-centered a {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+  }
+  body {
+  background: #363636;
+}
+.event__search__floater {
+  position: fixed;
+  top: 50px;
+/*   left:0; */
+  right: 50px;
+  transition: all ease-in-out 0.2s;
+  transform: translate(-50%, -50%);
+}
+
+.search__anchor{
+  position: relative;
+  width:auto;
+  height: auto;
+/*   TODO: Center anchor */
+}
+.search__submit {
+ opacity:0;
+  width: 0px;
+}
+.search__bar {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  outline:none;
+  border:none;
+  background: #fff;
+  width: 50px;
+  height:50px;
+  border-radius: 25px;
+  opacity: 0;
+  z-index:5;
+  transition: all 0.2;
+  font-size: 1em;
+}
+.search__bar:hover{
+  cursor: pointer;
+}
+.search__bar:focus {
+  width: 200px;
+  left:auto;
+  opacity: 1;
+  cursor: text;
+  transition: all 0.2;
+  padding-left: 25px;
+  padding-right: 70px;
+}
+.search__toggler {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #139659;
+  opacity: 1;
+  top: -4px;
+  left: -4px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+.search__toggler:hover{
+  cursor: pointer;
+}
+.search__toggler::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right:0;
+  bottom:0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(45deg);
+  transition: all 0.2s;
+}
+.search__toggler::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top:-5px;
+  right:0;
+  bottom:0;
+  left: -5px;
+  width:25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: all 0.2s;
+}
+.search__bar:focus ~ .search__toggler {
+  right: 400px;
+  background: #151515;
+  z-index: 6;
+  transition: all 0.2;
+}
+.search__bar:focus ~ .search__toggler::before{
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+.search__bar:focus ~ .search__toggler::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+  </style>
+  </head>
+  <body>
+  
+
+  <!-- Top navigation -->
+  <div class="topnav">
+  
+    <!-- Centered link -->
+    <div class="topnav-centered">
+      <a href="Copy.html" target="_blank" class="active">Home</a>
+    </div>
+    
+    <!-- Left-aligned links (default) -->
+    <a href="Copy1.html">News</a>
+    <a href="Copy1.html">Contact</a>
+    <a href="Copy1.html">About</a>
+    <!-- Right-aligned links -->
+ 
+  </div>
+  
+  <div class="event__search__floater">
+    <div class="search__anchor">
+      <form id="event-search-form" action="get">
+            <input type="text" class="search__bar" placeholder="Search Event">
+        <input class="search__submit" type="submit">
+        <div class="search__toggler"></div>
+      </form>
+            <div class="container">
+            <div id="searchWrapper">
+            </div>
+            <ul id="ost"></ul>
+        </div>
+        <script src="searchbar.js"></script>
+    </body>
+      </div>
+    </div>
+
+
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="nw3-cotainer w3-center w3-padding-32"> 
+  <h1><b>Fitness Experience</b></h1>
+  <p>Welcome to the blog of <span class="w3-tag">Lord Arcamo</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row"></div>
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="Social Issues\Fitness.jpg" alt="Gym" style="width:100%">
+    <div class="w3-container">
+      <h3><b>JOURNEY</b></h3>
+      <h5>The 3 years journey of fitness, <span class="w3-opacity">April 7, 2018</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>So basically I started my journey during and when I was stil in grade 9 and it was hard to keep up at first but I made it and it even made me a stronger athelete I would like to keep going till my bones will start breaking</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12"> 
+          <p><a href="Copy1.html" target="_blank"><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE &raquo;</b></button></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="Social Issues\Running.jpg" alt="Running" style="width:100%">
+    <div class="w3-container">
+      <h3><b>RUNNING</b></h3>
+      <h5>My First Run, <span class="w3-opacity">March 10,2019</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>My first run was a very hard thing to do because we had maintained a slow pace and it was like a living hell for me 
+          everyday we ran around 5km and I had fun and was feelings my runner's high I loved it but it gave me a very much high endurance in the long run.
+      </p>
+    <div class="w3-row"></div>
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="Social Issues\Fitness.jpg" alt="Gym" style="width:100%">
+    <div class="w3-container">
+      <h3><b>JOURNEY</b></h3>
+      <h5>The 3 years journey of fitness, <span class="w3-opacity">April 7, 2018</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>So basically I started my journey during and when I was stil in grade 9 and it was hard to keep up at first but I made it and it even made me a stronger athelete I would like to keep going till my bones will start breaking</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12"> 
+          <p><a href="Copy1.html" target="_blank"><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE &raquo;</b></button></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="Social Issues\Running.jpg" alt="Running" style="width:100%">
+    <div class="w3-container">
+      <h3><b>RUNNING</b></h3>
+      <h5>My First Run, <span class="w3-opacity">March 10,2019</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>My first run was a very hard thing to do because we had maintained a slow pace and it was like a living hell for me 
+          everyday we ran around 5km and I had fun and was feelings my runner's high I loved it but it gave me a very much high endurance in the long run.
+      </p>
+    </div>
+    <div class="w3-container">
+        <p> Much high endurance in the long run.
+        </p>
+        <div class="w3-row">
+          <div class="w3-col m8 s12">
+            <p><a href="Copy2.html" target="_blank"><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE &raquo;</b></button></a></p>
+          </div>
+          <div class="w3-col m4 w3-hide-small">
+            <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-badge">2</span></span></p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="Social Issues\Profile.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Hi I'm Lord Arcamo</b></h4>
+      <p>Hi guys I want to share my fitness experience where I started in my Journey.</p>
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Popular Posts</h4>
+    </div>
+    <a href="Copy2.html"><b><button class="w3-white w3-border"><ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="Social Issues\Elliud.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">The Runner who ran a sub 2 hour marathon</span><br>
+        <span>Elliud Kipchoge World Record</span>
+      </li></button><b></b></a>
+      <a href="Copy2.html"><button class="w3-white w3-border"><ul class="w3-ul w3-hoverable w3-white">
+        <li class="w3-padding-16">
+        <img src="Social Issues\Arnold.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Arnold Swarchznegger the GOAT of Bodybuilding</span><br>
+        <span>Arnold won the Mr. Olympia 8 times</span>
+      </li></button></a>
+      <a href="Copy2.html"><button class="w3-white w3-border"><ul class="w3-ul w3-hoverable w3-white">
+        <li class="w3-padding-16">
+        <img src="Social Issues\Hoka.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Hoka One One one of the strong shoes</span><br>
+        <span>One of the best shoes out there.</span>
+      </li></button></a>
+      <a href="Copy2.html"><button class="w3-white w3-border"><ul class="w3-ul w3-hoverable w3-white">
+        <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="Social Issues/Hammer.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Gym is one of the peoples favorite sport</span><br>
+        <span>Gym Time is gonna be your favorite!</span>
+      </li></button></a>
+    </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <a href="Copy2.html"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">Previous</button></a>
+  <a href="Copy2.html"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next &raquo;</button></a>
+  <p>Created by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Lord Arcamo</a></p>
+</footer>
+
+</body>
+</html>
