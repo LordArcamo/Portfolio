@@ -110,6 +110,8 @@ input[type=password] {
     animation-timing-function: ease;
 }
 
+
+
 @keyframes bounce-3 {
     0%   { transform: translateY(0); }
     30%  { transform: translateY(-100px); }
@@ -118,13 +120,12 @@ input[type=password] {
 }
 
 
-    @media (max-width: 800px) {
-        .form-inline input {
-          margin: 10px 0;
-        }
-        
-        .form-inline {
-          flex-direction: column;
-          align-items: stretch;
-        }
-      }
+@media screen and (max-width: 600px) {
+     input[type=text], input[type=password],label[for=uname],
+     label[for=pword],.signInBtn,.signUpBtn
+     {
+      align-self: center;
+      size-adjust: relative;
+      float: end;
+    }
+  }
