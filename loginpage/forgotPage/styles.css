@@ -1,0 +1,125 @@
+*{
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+@media only screen and (max-width: 600px) and (min-width: 360px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    a{
+        text-decoration: none;
+    }
+    img{
+        position: absolute;
+        display: none;
+    }
+    .login{
+        width: 20rem!important;
+    }
+    .rightCon{
+        margin-top: 15rem!important;
+    }
+    .username{
+        margin-right: 0rem!important;
+    }
+    
+    .lognForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin-left: 6rem;
+    }
+
+    .lowBracket{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        margin-left: 5rem;
+    }
+    .btn{
+        display: flex;
+        flex-direction: center;
+        align-items: center;
+        align-self: center;
+        margin-left: 5.5rem!important;
+    }
+    
+}
+
+
+img{
+    width: 25rem;
+    height: 40.4rem;
+}
+input{
+    display: flex;
+    width: 17rem;
+    height: 2rem;
+    border-radius: 7px;
+    border: 1px solid black;
+    padding-left: .9rem;
+}
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-bottom:2px solid black;
+    width: 30rem;
+    font-size: 2rem;
+}
+.rightCon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0rem;
+    gap:2rem;
+    padding-right: 8rem;
+}
+.desc{
+    display: flex;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.username{
+    margin-right: 15.5rem;
+}
+.lognForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    
+}
+
+.btn{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    color: white;
+    background: #009BD6;
+    border: 1px solid transparent;
+    margin-left: .8rem;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: transparent;
+    border: 1px solid #009BD6;
+    color: black;
+}
