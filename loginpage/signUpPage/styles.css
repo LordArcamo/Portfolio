@@ -1,0 +1,163 @@
+*{
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+@media only screen and (max-width: 600px) and (min-width: 360px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    a{
+        text-decoration: none;
+    }
+    img{
+        position: absolute;
+        width: 3rem;
+        height: 1vh;
+        display: none;
+    }
+    .login{
+        padding-right:8.5rem!important;
+    }
+    .rightCon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 3rem 3rem 3rem 3rem;
+        width: auto;
+    }
+    .password{
+        padding-right: 0rem!important;
+    }
+    .username{
+        padding-right: 0rem!important;
+    }
+    .email{
+        padding-right: 0rem!important;
+    }
+    .cpassword{
+        padding-right: 0rem!important;
+    }
+    .forgot{
+        margin-left: 0rem!important;
+    }
+    .lognForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin-left: 4.5rem;
+    }
+
+    .lowBracket{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        margin-left: 5rem;
+    }
+    .btn{
+        display: flex;
+        flex-direction: center;
+        align-items: center;
+        align-self: center;
+        margin-right: 4rem;
+    }
+    
+}
+
+
+
+a{
+    color: black;
+}
+img{
+    width: 30rem;
+    height: 40.4rem;
+}
+input{
+    display: flex;
+    width: 17rem;
+    height: 2rem;
+    border-radius: 7px;
+    border: 1px solid black;
+    padding-left: .9rem;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-bottom:2px solid black;
+    padding-left: 9rem;
+    padding-right:9rem;
+    font-size: 2rem;
+}
+.rightCon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap:2rem;
+    padding-right: 8rem;
+}
+.username{
+    padding-right: 13.5rem;
+}
+.email{
+    padding-right: 15.5rem;
+}
+.password{
+    margin-top: 1rem;
+    padding-right: 13.5rem;
+}
+.cpassword{
+    margin-top: 1rem;
+    padding-right: 10rem;
+}
+
+.lognForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    
+}
+.lowBracket{
+    display: flex;
+    gap: .7rem;
+}
+.forgot{
+    font-size: .8rem;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: -6.5rem;
+}
+
+.btn{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    color: white;
+    background: #009BD6;
+    border: 1px solid transparent;
+    margin-left: 9rem;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: transparent;
+    border: 1px solid #009BD6;
+    color: black;
+}
